@@ -1,0 +1,137 @@
+.recipe-detail {
+  background-color: #fbf2d5;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 90%;
+  margin: 70px auto;
+  border: 1px solid #ddd;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  overflow: hidden; /* Hide content that overflows the container */
+}
+
+.recipe-detail h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+}
+
+.detail-section {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allows items to wrap to next line if needed */
+}
+
+#recipe-title {
+  margin-left: 60px;
+  margin-bottom: 50px;
+  flex: 1;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  max-width: calc(
+    100% - 160px
+  ); /* Ensure text does not exceed container width */
+}
+
+.detail-title {
+  flex: 0 0 150px; /* Fixed width for titles */
+  font-weight: 500;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-right: 10px;
+}
+
+.detail-text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word; /* Break long words to prevent overflow */
+  white-space: pre-wrap; /* Maintain whitespace and line breaks */
+  max-width: calc(
+    100% - 160px
+  ); /* Ensure text does not exceed container width */
+}
+
+.recipe-image {
+  width: 40%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+#Back-to-List {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 120px;
+  margin-top: 10px;
+}
+
+#Edit {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  margin-left: 7px;
+  font-size: 15px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 110px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #003d7a;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:not(:last-child) {
+  margin-bottom: 10px; /* Space between buttons when there are multiple */
+}
+
+@media (max-width: 768px) {
+  .recipe-detail {
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .recipe-detail h1 {
+    font-size: 1.7em;
+  }
+
+  .detail-title {
+    flex: 0 0 120px; /* Adjust title width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-detail {
+    padding: 10px;
+    margin: 10px auto;
+  }
+
+  .recipe-detail h1 {
+    font-size: 1.5em;
+  }
+
+  .detail-title {
+    flex: 0 0 100px; /* Further adjust title width for very small screens */
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}

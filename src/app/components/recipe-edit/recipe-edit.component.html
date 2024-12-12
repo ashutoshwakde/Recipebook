@@ -1,0 +1,44 @@
+
+
+  <div class="recipe-form">
+    <h1>{{ isNewRecipe ? 'Add' : 'Edit' }} Recipe</h1>
+    <form [formGroup]="recipeForm" (ngSubmit)="onSave()">
+      <div class="form-group">
+        <label for="title"><strong>Title:</strong></label>
+        <input id="title" formControlName="title" required>
+        <div *ngIf="recipeForm.get('title')?.touched && recipeForm.get('title')?.invalid" class="error">
+           Title is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description"><strong>Description:</strong></label>
+        <textarea id="description" formControlName="description" required></textarea>
+        <div *ngIf="recipeForm.get('description')?.touched && recipeForm.get('description')?.invalid">
+          <small class="error">Description is required.</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ingredients"><strong>Ingredients</strong></label>
+        <textarea id="ingredients" formControlName="ingredients" required></textarea>
+        <div *ngIf="recipeForm.get('ingredients')?.touched && recipeForm.get('ingredients')?.invalid">
+          <small class="error">Ingredients are required.</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="instructions"><strong>Instructions</strong></label>
+        <textarea id="instructions" formControlName="instructions" required></textarea>
+        <div *ngIf="recipeForm.get('instructions')?.touched && recipeForm.get('instructions')?.invalid">
+          <small class="error">Instructions are required.</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="image"><strong>Image</strong></label>
+        <input type="file" id="image" (change)="onImageSelected($event)" id="select-image">
+      </div>
+      <div class="form-group">
+        <img *ngIf="imagePreview" [src]="imagePreview" alt="Recipe Image" class="preview-image">
+      </div>
+      <button type="submit">{{ isNewRecipe ? 'Add' : 'Update' }} Recipe</button>
+    </form>
+  </div>
+  

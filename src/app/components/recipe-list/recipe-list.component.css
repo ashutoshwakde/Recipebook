@@ -1,0 +1,133 @@
+.container {
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 50px;
+  background-color: #38598b;
+}
+
+.container h1{
+  color: white;
+}
+
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap; /* allows items to wrap to the next line */
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.recipe-item {
+  flex: 1 1 calc(33.333% - 20px); /* grow, shrink, and base width */
+  max-width: calc(33.333% - 20px); /* max-width same as flex-basis */
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.recipe-item h2 {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: wheat;
+}
+
+button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  padding: 7px 15px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.button {
+  position: relative;
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #34974d;
+  background-color: #3aa856;
+}
+
+.button,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #34974d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 30px;
+}
+
+.button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.button:hover {
+  background: #34974d;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #2e8644;
+}
+
+.button:active {
+  border: 1px solid #2e8644;
+}
+
+@media (max-width: 1200px) {
+  .recipe-item {
+    flex: 1 1 calc(50% - 20px); /* 2 items per row */
+    max-width: calc(50% - 20px); /* max-width same as flex-basis */
+  }
+}
+
+@media (max-width: 768px) {
+  .recipe-item {
+    flex: 1 1 100%; /* 1 item per row */
+    max-width: 100%; /* max-width same as flex-basis */
+  }
+}
+
+@media (max-width: 600px) {
+  button {
+    margin-top: 5px;
+  }
+}

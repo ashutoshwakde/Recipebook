@@ -1,0 +1,26 @@
+<div class="recipe-detail" *ngIf="recipe">
+  <h1 id="recipe-title">{{ recipe.title }}</h1>
+
+  <div class="detail-section" *ngIf="recipe.image">
+    <div class="detail-title"><strong>Image:</strong></div>
+    <img [src]="recipe.image" alt="Recipe Image" class="recipe-image" />
+  </div>
+
+  <div class="detail-section">
+    <div class="detail-title"><strong>Description:</strong></div>
+    <div class="detail-text">{{ recipe.description }}</div>
+  </div>
+
+  <div class="detail-section">
+    <div class="detail-title"><strong>Ingredients:</strong></div>
+    <div class="detail-text">{{ recipe.ingredients }}</div>
+  </div>
+
+  <div class="detail-section">
+    <div class="detail-title"><strong>Instructions:</strong></div>
+    <div class="detail-text">{{ recipe.instructions }}</div>
+  </div>
+
+  <button routerLink="/" id="Back-to-List">Back to List</button>
+  <button [routerLink]="['/edit', recipe.id]" id="Edit">Edit</button>
+</div>
